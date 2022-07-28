@@ -1,17 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <title>YpNext FrontEnd Test - Greenthumb</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./index.scss" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>YpNext FrontEnd Test - Greenthumb</title>
+
   </head>
 
   <body>
-    <img src="images/icons/logo-white.svg" alt="Greenthumb" />
+    <header>
+      <div class="banner">
+        <img  class="imageLeft" src="./images/hero/desktop/left-leaves.png" alt="">
+        <img class="imagePlant" src="./images/hero/desktop/plantperson.png" alt="">
+        <img class="imageRight" src="./images/hero/desktop/right-leaves.png" alt="">
+      </div>
+      
+
+        <div class="containerBanner">
+          <img class="logo" src="./images/icons/logo-white.svg" alt="">
+          <p class="sloganBanner">Find your next green friend</p>
+          <button class="buttonArrow"><img class="iconArrow" src="./images/icons/arrow-down.svg" alt=""></button>
+        </div>
+    </header>
+    <main>
+      <section class="sectionFilter">
+        <div class="articlesFilter">
+          <aside class="asideSun">
+              <img class="sunImage" src="./images/illustrations/sun.png" alt="">
+              <p>1. Set the amount of sunlight your plant will get.</p>
+              <select name="pets" id="pet-select">
+                <option value="">Select</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="hamster">Hamster</option>
+                <option value="parrot">Parrot</option>
+                <option value="spider">Spider</option>
+                <option value="goldfish">Goldfish</option>
+              </select>
+            
+          </aside>
+          <aside class="asideWater">
+  
+          </aside>
+          <aside class="asideChew">
+  
+          </aside>
+        </div>
+        
+      </section>
+    </main>
   </body>
 </html>
