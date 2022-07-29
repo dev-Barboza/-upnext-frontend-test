@@ -8,89 +8,308 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles/style.css" />
+    <script src="main.js"></script>
+    <script src="plants.json"></script>
     <title>YpNext FrontEnd Test - Greenthumb</title>
-
   </head>
 
   <body>
     <header>
+      <!-- Section baner Web -->
       <div class="banner">
-        <img  class="imageLeft" src="./images/hero/desktop/left-leaves.png" alt="">
-        <img class="imagePlant" src="./images/hero/desktop/plantperson.png" alt="">
-        <img class="imageRight" src="./images/hero/desktop/right-leaves.png" alt="">
+        <img
+          class="imageLeft"
+          src="./images/hero/desktop/left-leaves.png"
+          alt="Image plants"
+        />
+        <img
+          class="imagePlant"
+          src="./images/hero/desktop/plantperson.png"
+          alt="Image person"
+        />
+        <img
+          class="imageRight"
+          src="./images/hero/desktop/right-leaves.png"
+          alt="Image plants"
+        />
       </div>
-      
+      <!-- End section baner Web -->
 
-        <div class="containerBanner">
-          <img class="logo" src="./images/icons/logo-white.svg" alt="">
-          <p class="sloganBanner">Find your next green friend</p>
-          <button class="buttonArrow"><img class="iconArrow" src="./images/icons/arrow-down.svg" alt=""></button>
-        </div>
+      <!-- Section baner Mobile -->
+      <div class="bannerMobile">
+        <img
+          class="imageTop"
+          src="./images/hero/mobile/mobile-leaves.png"
+          alt="Image plants"
+        />
+        <img
+          class="imageBack"
+          src="./images/hero/mobile/mobile-plantperson.png"
+          alt="Image Person"
+        />
+      </div>
+      <!-- End section baner Mobile -->
+
+      <!-- Section Banner inform -->
+      <div class="containerBanner">
+        <img class="logo" src="./images/icons/logo-white.svg" alt="Logo Greenthumb" />
+        <p class="sloganBanner">Find your next green friend</p>
+        <button class="buttonArrow" id="myBtn" onclick="topFunction()">
+          <img class="iconArrow" src="./images/icons/arrow-down.svg" alt="icon arrow down" />
+        </button>
+      </div>
+      <!-- end section Banner inform -->
     </header>
     <main>
-      <section class="sectionFilter">
-        <div class="articlesFilter">
-          <aside class="asideSun">
+      <!-- Section Filters -->
+      <div class="containerFilter">
+        <section class="sectionFilter">
+          <div class="articlesFilter">
+            <!-- Individual Filter -->
+            <aside class="asideSun">
               <article class="imageText">
-                <img class="ilustrationFilterImage" src="./images/illustrations/sun.png" alt="">
-                <p>1. Set the amount of sunlight your plant will get.</p>
+                <img
+                  class="ilustrationFilterImage"
+                  src="./images/illustrations/sun.png"
+                  alt="icon sun"
+                />
+                <p>
+                  <b>1.</b>Set the amount of <b>sunlight</b> your plant will
+                  get.
+                </p>
               </article>
-              
-              <select name="pets" id="pet-select">
-                <option value="">Select</option>
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
-                <option value="hamster">Hamster</option>
-                <option value="parrot">Parrot</option>
-                <option value="spider">Spider</option>
-                <option value="goldfish">Goldfish</option>
-              </select>
-            
-          </aside>
-          <aside class="asideWater">
+              <div id="myBtn" class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">
+                  Select...
+                </button>
+                <div id="myDropdown" class="dropdown-content">
+                  <button class="btn" onclick="filterSelection('no')">
+                    No
+                  </button>
+                  <button class="btn" onclick="filterSelection('low')">
+                    Low
+                  </button>
+                  <button class="btn" onclick="filterSelection('high')">
+                    Hight
+                  </button>
+                </div>
+              </div>
+            </aside>
+            <!-- end Individual Filter -->
+            <!-- Individual Filter -->
+            <aside class="asideWater">
               <article class="imageText">
-                <img class="waterriganImage" src="./images/illustrations/wateringcan.png" alt="">
-                <p>2. How often do you want to water your plant?</p>
+                <img
+                  class="waterriganImage"
+                  src="./images/illustrations/wateringcan.png"
+                  alt="icon wateringcan"
+                />
+                <p>
+                  <b>2.</b>How often do you want to <b>water</b> your plant?
+                </p>
               </article>
-              
-              <select name="pets" id="pet-select">
-                <option value="">Select</option>
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
-                <option value="hamster">Hamster</option>
-                <option value="parrot">Parrot</option>
-                <option value="spider">Spider</option>
-                <option value="goldfish">Goldfish</option>
-              </select>
-          </aside>
-          <aside class="asideChew">
+
+              <div id="myBtn2" class="dropdown">
+                <button onclick="myFunction2()" class="dropbtn">
+                  Select...
+                </button>
+                <div id="myDropdown2" class="dropdown-content">
+                  <button class="btn" onclick="filterSelection('rarely')">
+                    Rarely
+                  </button>
+                  <button class="btn" onclick="filterSelection('regularly')">
+                    Regularly
+                  </button>
+                  <button class="btn" onclick="filterSelection('daily')">
+                    Daily
+                  </button>
+                </div>
+              </div>
+            </aside>
+            <!-- end Individual Filter -->
+            <!-- Individual Filter -->
+            <aside class="asideChew">
               <article class="imageText">
-                <img class="ilustrationFilterImage" src="./images/illustrations/dog.png" alt="">
-                <p>3. Do you have pets? Do they chew plants?</p>
+                <img
+                  class="ilustrationFilterImage"
+                  src="./images/illustrations/dog.png"
+                  alt="icon dog"
+                />
+                <p><b>3.</b>Do you have <b>chew</b> pets? Do they plants?</p>
               </article>
-              
-              <select name="pets" id="pet-select">
-                <option value="">Select</option>
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
-                <option value="hamster">Hamster</option>
-                <option value="parrot">Parrot</option>
-                <option value="spider">Spider</option>
-                <option value="goldfish">Goldfish</option>
-              </select>
-          </aside>
-        </div>
-        
-      </section>
+              <div id="myBtn3" class="dropdown">
+                <button onclick="myFunction3()" class="dropbtn">
+                  Select...
+                </button>
+                <div id="myDropdown3" class="dropdown-content">
+                  <button class="btn" onclick="filterSelection('false')">
+                    True
+                  </button>
+                  <button class="btn" onclick="filterSelection('all')">
+                    False
+                  </button>
+                </div>
+              </div>
+            </aside>
+            <!-- end Individual Filter (last)-->
+          </div>
+        </section>
+      </div>
+      <!-- end section Filters -->
+
+      <!-- Section List Plants -->
       <section class="listPlants">
         <div class="containerList">
           <div class="bannerList">
-            <img class="pickImage" src="./images/illustrations/pick.png" alt="">
+            <img
+              class="pickImage"
+              src="./images/illustrations/pick.png"
+              alt="icon pick"
+            />
             <p>Our picks for you</p>
           </div>
+          <div class="containerPlants">
+            <div class="listedPlants">
+              <!-- Section Indivudual Plants -->
+              <div
+                id="individualPlants"
+                class="individualPlants high rarely false"
+              >
+                <div class="imageIndPlant">
+                  <img
+                    src="./images/plant photos/euphorbia-eritrea.png"
+                    alt="image plant euphorbia "
+                  />
+                </div>
+                <div class="informationPlants">
+                  <p>Euphorbia eritrea</p>
+                  <p>$25</p>
+                </div>
+              </div>
+              <!-- End Section Indivudual Plants -->
+              <!-- Section Indivudual Plants -->
+              <div
+                id="individualPlants"
+                class="individualPlants high rarely false"
+              >
+                <div class="imageIndPlant">
+                  <img src="./images/plant photos/succulent-bowl.png" alt="image plant succulent-bowl" />
+                </div>
+                <div class="informationPlants">
+                  <p>Succulent Bowl</p>
+                  <p>$30</p>
+                </div>
+              </div>
+              <!-- End Section Indivudual Plants -->
+              <!-- Section Indivudual Plants -->
+              <div
+                id="individualPlants"
+                class="individualPlants high rarely false"
+              >
+                <div class="imageIndPlant">
+                  <img
+                    src="./images/plant photos/bunny-ears-cacti.png"
+                    alt="Image plant bunny ears cacti"
+                  />
+                </div>
+                <div class="informationPlants">
+                  <p>Bunny ears cacti</p>
+                  <p>$20</p>
+                </div>
+              </div>
+              <!-- End Section Indivudual Plants -->
+              <!-- Section Indivudual Plants -->
+              <div
+                id="individualPlants"
+                class="individualPlants high regularly false"
+              >
+                <div class="imageIndPlant animals">
+                  <img src="./images/plant photos/ficus-lyrata.png" alt="Image plant ficus lyrata" />
+                </div>
+                <div class="informationPlants">
+                  <p>Ficus lyrata</p>
+                  <p>$30</p>
+                </div>
+              </div>
+              <!-- End Section Indivudual Plants -->
+              <!-- Section Indivudual Plants -->
+              <div
+                id="individualPlants"
+                class="individualPlants low regularly false"
+              >
+                <div class="imageIndPlant">
+                  <img src="./images/plant photos/lucky-bamboo.png" alt="Image plant lucky bamboo" />
+                </div>
+                <div class="informationPlants">
+                  <p>Bamboo</p>
+                  <p>$15</p>
+                </div>
+              </div>
+              <!-- End Section Indivudual Plants -->
+              <!-- Section Indivudual Plants -->
+              <div
+                id="individualPlants"
+                class="individualPlants low regularly false"
+              >
+                <div class="imageIndPlant">
+                  <img src="./images/plant photos/ponytail-palm.png" alt="Image plant ponytail-palm" />
+                </div>
+                <div class="informationPlants cars">
+                  <p>Ponytail Palm</p>
+                  <p>$50</p>
+                </div>
+              </div>
+              <!-- End Section Indivudual Plants -->
+              <!-- Section Indivudual Plants -->
+              <div
+                id="individualPlants"
+                class="individualPlants no regularly true"
+              >
+                <div class="imageIndPlant">
+                  <img
+                    src="./images/plant photos/pilea-peperomioides.png"
+                    alt="Image plant pilea-peperomioides "
+                  />
+                </div>
+                <div class="informationPlants">
+                  <p>Pilea peperomioides</p>
+                  <p>$50</p>
+                </div>
+              </div>
+              <!-- End Section Indivudual Plants -->
+              <!-- Section Indivudual Plants -->
+              <div id="individualPlants" class="individualPlants no daily true">
+                <div class="imageIndPlant">
+                  <img
+                    src="./images/plant photos/calathea-triostar.png"
+                    alt="Image plant calathea triostar"
+                  />
+                </div>
+                <div class="informationPlants">
+                  <p>Calathea triostar</p>
+                  <p>$50</p>
+                </div>
+              </div>
+              <!-- End Section Indivudual Plants -->
+              <!-- Section Indivudual Plants -->
+              <div id="individualPlants" class="individualPlants no daily true">
+                <div class="imageIndPlant">
+                  <img
+                    src="./images/plant photos/monstera-deliciosa.png"
+                    alt="Image plant monstera deliciosa"
+                  />
+                </div>
+                <div class="informationPlants">
+                  <p>Monstera deliciosa</p>
+                  <p>$50</p>
+                </div>
+              </div>
+              <!-- End Section Indivudual Plants -->
+            </div>
+          </div>
         </div>
-
       </section>
+      <!-- End Section List Plants -->
     </main>
   </body>
 </html>
